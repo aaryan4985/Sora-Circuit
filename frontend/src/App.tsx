@@ -1,21 +1,25 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
+import Sidebar from './components/Sidebar';
 import Dashboard from './pages/Dashboard';
 import RaceSimulation from './pages/RaceSimulation';
+import { TeamProvider } from './context/TeamContext';
 
 function App() {
   return (
-    <Router>
-      <div className="speed-lines"></div>
-      <Navbar />
-      <main>
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/races" element={<RaceSimulation />} />
-        </Routes>
-      </main>
-    </Router>
+    <TeamProvider>
+      <Router>
+        <div className="app-container">
+          <Sidebar />
+          <main className="main-content">
+            <Routes>
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/races" element={<RaceSimulation />} />
+            </Routes>
+          </main>
+        </div>
+      </Router>
+    </TeamProvider>
   );
 }
 

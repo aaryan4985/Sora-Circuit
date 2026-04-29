@@ -127,3 +127,34 @@
 .mt-4 {
   margin-top: 16px;
 }
+
+.driver-card.drafted {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 15px rgba(72, 202, 228, 0.2);
+}
+
+.drafted-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-15deg);
+  font-size: 2rem;
+  font-weight: 900;
+  border: 4px solid var(--neon-cyan);
+  padding: 8px 16px;
+  background: rgba(10, 10, 15, 0.7);
+  backdrop-filter: blur(4px);
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.drop-btn {
+  border-color: #f94144;
+}
+.drop-btn::before {
+  background: linear-gradient(90deg, #f94144, #f3722c);
+}
+.drop-btn:hover {
+  box-shadow: 0 0 20px rgba(249, 65, 68, 0.6);
+}
