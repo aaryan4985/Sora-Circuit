@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Crosshair, Flag, Activity, Battery, TriangleAlert } from 'lucide-react';
+import { Crosshair, Flag, TriangleAlert } from 'lucide-react';
 import { useTeam } from '../context/TeamContext';
 
 const Sidebar: React.FC = () => {

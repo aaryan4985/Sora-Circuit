@@ -5,7 +5,6 @@ import type { Race, RaceResult } from '../types';
 
 const RaceSimulation: React.FC = () => {
   const [races, setRaces] = useState<Race[]>([]);
-  const [loading, setLoading] = useState(true);
   const [simulating, setSimulating] = useState<number | null>(null);
   const [results, setResults] = useState<Record<number, RaceResult[]>>({});
   const [sectors, setSectors] = useState<string[]>(['', '', '']); // 'green', 'purple', 'yellow'
@@ -20,8 +19,6 @@ const RaceSimulation: React.FC = () => {
       setRaces(response.data);
     } catch (error) {
       console.error('Error fetching races:', error);
-    } finally {
-      setLoading(false);
     }
   };
 
